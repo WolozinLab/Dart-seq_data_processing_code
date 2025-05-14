@@ -1,0 +1,11 @@
+# Group definitions for BAM file merging
+# Format: /path to bam file/XXX.bam
+#
+# Notes:
+# - Each line defines a group with a name and a pattern/prefix for matching files
+# - The pattern can contain wildcards (e.g., *DART-mut*.bam)
+# - The prefix will match all files starting with that prefix
+
+# Disease groups
+DART-mut_AD	*DART-mut*AD*.bam
+DART-mut_healthy	*DART-mut*healthy*.bam

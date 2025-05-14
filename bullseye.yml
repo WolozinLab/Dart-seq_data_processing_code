@@ -1,0 +1,23 @@
+name: Bullseye
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.8
+  - perl>=5.26.0
+  - perl-app-cpanminus
+  - samtools>=1.14
+  - bedtools>=2.30.0
+  - tabix>=1.11
+  - htslib>=1.14
+  - expat>=2.4.1
+  - numpy
+  - pandas
+  - matplotlib
+  - pysam
+  - pip
+  - pip:
+    - biopython
+    - deeptools
+    - pybedtools 
