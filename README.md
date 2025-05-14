@@ -42,7 +42,9 @@ For detailed installation instructions of the basic pipeline components, please 
 
 ### Bullseye Pipeline Installation
 
-The Bullseye calling pipeline requires additional dependencies. The easiest way to install them is through conda:
+The Bullseye calling pipeline is based on the Bullseye tool developed for detection of RNA editing sites in DART-seq datasets [Bullseye GitHub Repository](https://github.com/mflamand/Bullseye). Bullseye was initially branched from HyperTRIBE and modified to enable detection of various RNA editing events, support single cell sequencing datasets, and improve performance through multicore processing.
+
+The easiest way to install the required dependencies is through conda:
 
 #### Prerequisites
 
