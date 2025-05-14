@@ -24,6 +24,10 @@ The Dart-seq data processing pipeline consists of the following steps:
 4. **BAM Indexing**: BAM files are indexed using samtools for faster access.
 5. **Bullseye Calling**: Processed BAM files are analyzed to identify Bullseye sites, which indicate RNA modifications.
 
+## Installation
+
+For detailed installation instructions, please refer to the [Installation Guide](INSTALL.md).
+
 ## Usage
 
 ### Complete Workflow
@@ -92,6 +96,8 @@ The pipeline requires the following tools to be installed:
 - Samtools
 - Python 3.6 or later
 
+See the [Installation Guide](INSTALL.md) for detailed installation instructions.
+
 ## Changelog
 
 - Initial project structure created
@@ -101,3 +107,4 @@ The pipeline requires the following tools to be installed:
 - Added complete workflow script
 - Added duplicate removal script
 - Added BAM indexing script
+- Added installation guide
