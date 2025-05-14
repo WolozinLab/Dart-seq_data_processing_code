@@ -68,7 +68,7 @@ sudo make install
 
 ### 5. Python 3
 
-Python 3.6 or later is required for running the Bullseye caller script.
+Python 3.6 or later is required for running analysis scripts.
 
 ```bash
 # Install Python 3 on Debian/Ubuntu
@@ -79,6 +79,35 @@ brew install python
 
 # Install required Python packages
 pip3 install numpy pandas pysam matplotlib
+```
+
+### 6. Bedtools
+
+Bedtools is required for DRACH filtering and genomic feature analysis.
+
+```bash
+# Install on Debian/Ubuntu
+sudo apt-get install bedtools
+
+# OR on macOS with Homebrew
+brew install bedtools
+```
+
+### 7. R and Bioconductor packages
+
+R and several Bioconductor packages are required for merging and filtering sites.
+
+```bash
+# Install R
+# Debian/Ubuntu
+sudo apt-get install r-base r-base-dev
+
+# OR macOS with Homebrew
+brew install r
+
+# Install required R packages
+R -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager"); BiocManager::install(c("GenomicRanges", "BSgenome", "Biostrings", "gUtils"))'
+R -e 'install.packages(c("dplyr", "purrr", "stringr"))'
 ```
 
 ## Configuring the Pipeline
@@ -103,22 +132,13 @@ After installing the required software, you need to update the path variables in
 
 4. Edit `code/preprocessing/build_bam_index.sh` to ensure samtools is in your PATH or uncomment and modify the module loading line if needed.
 
-## Testing the Installation
-
-To verify that the installation is correct:
-
-1. Run a simple test on small FASTQ files:
-   ```bash
-   ./code/dart_seq_workflow.sh --read1 test_data/sample_R1.fastq.gz --read2 test_data/sample_R2.fastq.gz --genome test_data/reference.fa --output test_output
-   ```
-
-2. Check the output directory for the expected files.
+5. Ensure `code/DRACH_filter.sh` has the correct path to your reference genome or set the `GENOME_PATH` environment variable.
 
 ## Troubleshooting
 
 - **Java errors**: Ensure you have Java 8 or later installed.
 - **Memory issues**: Adjust memory allocation for Java tools by modifying the `-Xmx` parameter.
 - **Path issues**: Verify that all paths in the scripts point to the correct locations of the installed tools.
-- **File permissions**: Ensure the script files are executable (`chmod +x code/*.sh code/preprocessing/*.sh`).
+- **File permissions**: Ensure the script files are executable (`chmod +x code/*.sh code/preprocessing/*.sh code/bullseye_calling/*.sh`).
 
 For additional help, please open an issue in the repository. 
