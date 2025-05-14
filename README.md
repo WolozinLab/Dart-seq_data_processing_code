@@ -95,20 +95,20 @@ R -e 'install.packages(c("dplyr", "purrr", "stringr"))'
 
 ### Data Preprocessing Steps
 
-#### STAR Alignment
-
-To align reads to a reference genome using STAR:
-
-```bash
-./code/preprocessing/STAR_alignment.sh {read1.fastq.gz} {read2.fastq.gz} {reference-genome} {output-dir}
-```
-
 #### Trimmomatic
 
 To trim reads using Trimmomatic:
 
 ```bash
 ./code/preprocessing/Trimmomatic.sh {input-R1.fastq.gz} {input-R2.fastq.gz} {output-paired-R1.fastq.gz} {output-paired-R2.fastq.gz} {output-unpaired-R1.fastq.gz} {output-unpaired-R2.fastq.gz}
+```
+
+#### STAR Alignment
+
+To align reads to a reference genome using STAR:
+
+```bash
+./code/preprocessing/STAR_alignment.sh {read1.fastq.gz} {read2.fastq.gz} {reference-genome} {output-dir}
 ```
 
 #### Remove Duplicates
